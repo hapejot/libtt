@@ -68,9 +68,13 @@ FetchContent_MakeAvailable(Check)
 
 message( "Check: ${CHECK_LIBRARIES}" )
 
+include_directories(${PROJECT_SOURCE_DIR})
+
+add_library(tt src/mem.c)
+
 
 add_executable(test test/main.c)
-target_link_libraries(test check)
+target_link_libraries(test tt check)
 if(HAVE_PTHREAD)
-target_link_libraries(test pthread)
+    target_link_libraries(test pthread)
 endif()
