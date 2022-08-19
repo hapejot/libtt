@@ -1,3 +1,9 @@
 .b
 .vscode
+*.bak
 *.log
+doc/html
+doc/latex
+*.code-workspace
+err
+tags

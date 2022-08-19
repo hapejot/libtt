@@ -1,0 +1,29 @@
+/**
+@mainpage The TinyTalk library
+
+The purpose of this library is to help using TinyTalk language in your own 
+programs. This should facilitate easier scripting for these programs.
+
+It should be as easy as Tcl used to be but from a language point of view
+some background from smalltalk should be involved.
+
+One important focus lies on remote interoperability. 
+
+@dot "library structure" width=3cm
+digraph {
+    Main -> Itab
+    Itab -> Memory
+    Main -> Memory
+}
+@enddot
+
+
+@startuml "memory usage flow" width=3cm
+Main -> Memory : init()
+Main -> Memory : alloc()
+Main -> Memory : check()
+Main -> Memory : free()
+Main -> Memory : report()
+@enduml
+
+*/

@@ -70,10 +70,10 @@ message( "Check: ${CHECK_LIBRARIES}" )
 
 include_directories(${PROJECT_SOURCE_DIR})
 
-add_library(tt src/mem.c)
+add_library(tt src/mem.c src/itab.c)
 
 
-add_executable(test test/main.c)
+add_executable(test test/main.c test/mem.c test/itab.c)
 target_link_libraries(test tt check)
 if(HAVE_PTHREAD)
     target_link_libraries(test pthread)
